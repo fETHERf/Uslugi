@@ -24,7 +24,7 @@ public class OknoDodaj extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public void main(String[] args) {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -41,7 +41,7 @@ public class OknoDodaj extends JFrame {
 	 * Create the frame.
 	 */
 	public OknoDodaj() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 379);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -97,7 +97,12 @@ public class OknoDodaj extends JFrame {
 				instance.dodajDoListy(usluga);
 				textField_id.setText(String.valueOf(instance.getInstance().size()));
 				//System.out.println(usluga.getID() + "nazwa: " + usluga.getNazwa() + " " + usluga.getCena());
+				textField_nazwa.setText("");
+				textField_cena.setText("");
 				textField_id.setText(String.valueOf(instance.getInstance().size()));
+				
+				Dodano frame1 = new Dodano();
+				frame1.setVisible(true);
 				
 			}
 			
