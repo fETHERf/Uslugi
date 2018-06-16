@@ -73,6 +73,9 @@ public class GUI {
 		
 		JButton btnNewButton_2 = new JButton("Za\u0142aduj Uslugi");
 		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_2);
+		
+		
 	}
+	
 
 }

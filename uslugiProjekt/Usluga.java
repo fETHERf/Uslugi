@@ -1,15 +1,17 @@
 package uslugiProjekt;
 
 public class Usluga {
+	static int id = 0;
 	private int id_uslugi;
 	private String nazwa_uslugi;
 	private double cena_uslugi;
 	
 	public Usluga() {}
-	public Usluga(int id, String nazwa, double cena) {
+	public Usluga(String nazwa, double cena) {
 		id_uslugi = id;
 		nazwa_uslugi = nazwa;
 		cena_uslugi = cena;
+		id++;
 	}
 	
 	public int getID() {

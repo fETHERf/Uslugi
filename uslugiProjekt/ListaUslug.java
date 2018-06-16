@@ -7,6 +7,7 @@ import java.util.List;
 public class ListaUslug {
 	private List<Usluga> listaUslug = new ArrayList<>();
     private static ListaUslug instance;
+    static int size = 0;
     
     
     private ListaUslug() {
@@ -22,6 +23,11 @@ public class ListaUslug {
     
     public void dodajDoListy(Usluga usluga) {
     	instance.listaUslug.add(usluga);
+    	size++;
+    }
+    
+    public int size() {
+    	return size;
     }
     
     public List<Usluga> czytajListe() {

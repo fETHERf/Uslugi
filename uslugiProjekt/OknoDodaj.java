@@ -8,6 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -62,6 +65,7 @@ public class OknoDodaj extends JFrame {
 		
 		textField_id = new JTextField();
 		textField_id.setBounds(176, 30, 177, 22);
+		textField_id.setEditable(false);
 		contentPane.add(textField_id);
 		textField_id.setColumns(10);
 		
@@ -78,5 +82,27 @@ public class OknoDodaj extends JFrame {
 		JButton btnDodaj = new JButton("Dodaj");
 		btnDodaj.setBounds(176, 128, 177, 23);
 		contentPane.add(btnDodaj);
+		
+		ListaUslug instance = ListaUslug.getInstance();
+	    
+		
+		btnDodaj.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				
+				//int id = Integer.parseInt(textField_id.getText());
+				double cena = Double.parseDouble(textField_cena.getText());
+				String nazwa = textField_nazwa.getText();
+				Usluga usluga = new Usluga(nazwa, cena);
+				instance.dodajDoListy(usluga);
+				textField_id.setText(String.valueOf(instance.getInstance().size()));
+				//System.out.println(usluga.getID() + "nazwa: " + usluga.getNazwa() + " " + usluga.getCena());
+				textField_id.setText(String.valueOf(instance.getInstance().size()));
+				
+			}
+			
+		});
+		
+		
 	}
 }
