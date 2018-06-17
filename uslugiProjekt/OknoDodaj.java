@@ -84,7 +84,7 @@ public class OknoDodaj extends JFrame {
 		contentPane.add(btnDodaj);
 		
 		ListaUslug instance = ListaUslug.getInstance();
-	    
+		textField_id.setText(String.valueOf(instance.getInstance().size()));
 		
 		btnDodaj.addMouseListener(new MouseAdapter() {
 			@Override

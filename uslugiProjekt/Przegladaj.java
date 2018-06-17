@@ -62,6 +62,7 @@ public class Przegladaj extends JFrame {
 		
 		String[] ar = new String[instance.size()];
 		
+		
 		for (int i = 0; i < instance.size(); i++) {
 			ar[i] = instance.czytajListe().get(i).getNazwa();
 		}
@@ -112,6 +113,11 @@ public class Przegladaj extends JFrame {
 		JButton btnZapisz = new JButton("Zapisz");
 		btnZapisz.setBounds(225, 127, 89, 23);
 		contentPane.add(btnZapisz);
+		
+		 textField_id.setText(String.valueOf(instance.czytajListe().get(0).getID()));
+	     textField_cena.setText(String.valueOf(instance.czytajListe().get(0).getCena()));
+	     textField_nazwa.setText(instance.czytajListe().get(0).getNazwa());
+		
 		int selectedIndex = comboBox.getSelectedIndex();
 		
 		comboBox.addActionListener(new ActionListener() {
@@ -120,29 +126,62 @@ public class Przegladaj extends JFrame {
 		    public void actionPerformed(ActionEvent event) {
 		        JComboBox<String> combo = (JComboBox<String>) event.getSource();
 		        int selectedIndex = combo.getSelectedIndex();
+		        
+		        textField_cena.setEditable(false);
+		    	textField_nazwa.setEditable(false);
 		 
 		        textField_id.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getID()));
 		        textField_cena.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getCena()));
 		        textField_nazwa.setText(instance.czytajListe().get(selectedIndex).getNazwa());
 		        
-		        btnEdytuj.addActionListener(new ActionListener() {
-					 
-				    @Override
-				    public void actionPerformed(ActionEvent event) {
-				    	//textField_id.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getID()));
-				        //textField_cena.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getCena()));
-				        //textField_nazwa.setText(instance.czytajListe().get(selectedIndex).getNazwa());
-				    	
-				    	textField_id.setEditable(true);
-				    	textField_cena.setEditable(true);
-				    	textField_nazwa.setEditable(true);
-				        
-
-				    }
-				});
+		       
+				
+		      
+		        
+		        
 		    }
+		    
+		    
 		});
 		
+		
+		 btnEdytuj.addActionListener(new ActionListener() {
+	        	
+			    @Override
+			    public void actionPerformed(ActionEvent event) {
+			    	//textField_id.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getID()));
+			        //textField_cena.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getCena()));
+			        //textField_nazwa.setText(instance.czytajListe().get(selectedIndex).getNazwa());
+			    	
+			    	
+			    	textField_cena.setEditable(true);
+			    	textField_nazwa.setEditable(true);
+			        
+
+			    }
+			});
+		 
+		 
+		 btnZapisz.addActionListener(new ActionListener() {
+	        	
+			    @Override
+			    public void actionPerformed(ActionEvent event) {
+			    	//textField_id.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getID()));
+			        //textField_cena.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getCena()));
+			        //textField_nazwa.setText(instance.czytajListe().get(selectedIndex).getNazwa());
+			    	
+			    	String nazwa = textField_nazwa.getText();
+			    	double cena = Double.parseDouble(textField_cena.getText());
+			    	
+			    	instance.czytajListe().get(comboBox.getSelectedIndex()).edytuj(nazwa, cena);
+			    	
+			    	
+			    	textField_cena.setEditable(false);
+			    	textField_nazwa.setEditable(false);
+			        
+
+			    }
+			});
 		
 		
 	}
