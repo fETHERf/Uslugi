@@ -1,0 +1,149 @@
+package uslugiProjekt;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.util.ArrayList;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.BoxLayout;
+import javax.swing.JTextField;
+import java.awt.FlowLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JComboBox;
+import javax.swing.JSpinner;
+import javax.swing.JLabel;
+
+public class Przegladaj extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtDodanoNowUsug;
+	private JTextField textField_id;
+	private JTextField textField_nazwa;
+	private JTextField textField_cena;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Przegladaj frame = new Przegladaj();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Przegladaj() {
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 393, 233);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		ListaUslug instance = ListaUslug.getInstance();
+		
+		String[] ar = new String[instance.size()];
+		
+		for (int i = 0; i < instance.size(); i++) {
+			ar[i] = instance.czytajListe().get(i).getNazwa();
+		}
+		
+		
+		
+		JComboBox<String> comboBox = new JComboBox<String>(ar);
+		comboBox.setBounds(37, 11, 275, 20);
+		contentPane.add(comboBox);
+		
+		textField_id = new JTextField();
+		textField_id.setEditable(false);
+		textField_id.setBounds(126, 38, 186, 20);
+		contentPane.add(textField_id);
+		textField_id.setColumns(10);
+		
+		textField_nazwa = new JTextField();
+		textField_nazwa.setEditable(false);
+		textField_nazwa.setColumns(10);
+		textField_nazwa.setBounds(126, 66, 186, 20);
+		contentPane.add(textField_nazwa);
+		
+		textField_cena = new JTextField();
+		textField_cena.setEditable(false);
+		textField_cena.setColumns(10);
+		textField_cena.setBounds(126, 96, 186, 20);
+		contentPane.add(textField_cena);
+		
+		JLabel lblId = new JLabel("ID");
+		lblId.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblId.setBounds(47, 42, 46, 14);
+		contentPane.add(lblId);
+		
+		JLabel lblNazwa = new JLabel("Nazwa");
+		lblNazwa.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNazwa.setBounds(47, 69, 46, 14);
+		contentPane.add(lblNazwa);
+		
+		JLabel lblCena = new JLabel("Cena");
+		lblCena.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblCena.setBounds(47, 99, 46, 14);
+		contentPane.add(lblCena);
+		
+		JButton btnEdytuj = new JButton("Edytuj");
+		btnEdytuj.setBounds(126, 127, 89, 23);
+		contentPane.add(btnEdytuj);
+		
+		JButton btnZapisz = new JButton("Zapisz");
+		btnZapisz.setBounds(225, 127, 89, 23);
+		contentPane.add(btnZapisz);
+		int selectedIndex = comboBox.getSelectedIndex();
+		
+		comboBox.addActionListener(new ActionListener() {
+			 
+		    @Override
+		    public void actionPerformed(ActionEvent event) {
+		        JComboBox<String> combo = (JComboBox<String>) event.getSource();
+		        int selectedIndex = combo.getSelectedIndex();
+		 
+		        textField_id.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getID()));
+		        textField_cena.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getCena()));
+		        textField_nazwa.setText(instance.czytajListe().get(selectedIndex).getNazwa());
+		        
+		        btnEdytuj.addActionListener(new ActionListener() {
+					 
+				    @Override
+				    public void actionPerformed(ActionEvent event) {
+				    	//textField_id.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getID()));
+				        //textField_cena.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getCena()));
+				        //textField_nazwa.setText(instance.czytajListe().get(selectedIndex).getNazwa());
+				    	
+				    	textField_id.setEditable(true);
+				    	textField_cena.setEditable(true);
+				    	textField_nazwa.setEditable(true);
+				        
+
+				    }
+				});
+		    }
+		});
+		
+		
+		
+	}
+}
