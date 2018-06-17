@@ -8,8 +8,11 @@ import java.awt.BorderLayout;
 import javax.swing.SwingConstants;
 import javax.swing.event.AncestorListener;
 
+import org.jfree.ui.RefineryUtilities;
+
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 import java.awt.event.MouseAdapter;
@@ -75,13 +78,26 @@ public class GUI {
 		});
 		frmZarzdzanieUsugami.getContentPane().add(btnPrzegldajUsugi);
 		
+		JButton btnStatystyki = new JButton("Statystyki");
+		frmZarzdzanieUsugami.getContentPane().add(btnStatystyki);
+		
 		JButton btnNewButton_1 = new JButton("Modyfikuj Usluge");
 		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Za\u0142aduj Uslugi");
 		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_2);
 		
-		
+		btnStatystyki.addActionListener(new ActionListener() {
+        	
+		    @Override
+		    public void actionPerformed(ActionEvent event) {
+		    	chart demo = new chart( "Mobile Sales" );
+		        demo.setSize( 560 , 367 );    
+		        RefineryUtilities.centerFrameOnScreen( demo );    
+		        demo.setVisible( true ); 
+		        
+		    }
+		});
 	}
 	
 

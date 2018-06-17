@@ -3,8 +3,8 @@ package uslugiProjekt;
 
 public class Main {
 	public static void main(String[] args) {
-	    Usluga usluga = new Usluga("oyster", 5.0);
-	    Usluga usluga1 = new Usluga("shell", 4.75);
+	    Usluga usluga = new Usluga("oyster", 5.0,"kategoria");
+	    Usluga usluga1 = new Usluga("shell", 4.75,"xd");
 	    System.out.println("id: " + usluga.getID() + ", nazwa: " + usluga.getNazwa());
 	    
 	    ListaUslug instance = ListaUslug.getInstance();

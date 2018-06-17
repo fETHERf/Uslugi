@@ -30,6 +30,7 @@ public class Przegladaj extends JFrame {
 	private JTextField textField_id;
 	private JTextField textField_nazwa;
 	private JTextField textField_cena;
+	private JTextField textField_Kategoria;
 
 	/**
 	 * Launch the application.
@@ -107,16 +108,28 @@ public class Przegladaj extends JFrame {
 		contentPane.add(lblCena);
 		
 		JButton btnEdytuj = new JButton("Edytuj");
-		btnEdytuj.setBounds(126, 127, 89, 23);
+		btnEdytuj.setBounds(126, 161, 89, 23);
 		contentPane.add(btnEdytuj);
 		
 		JButton btnZapisz = new JButton("Zapisz");
-		btnZapisz.setBounds(225, 127, 89, 23);
+		btnZapisz.setBounds(223, 161, 89, 23);
 		contentPane.add(btnZapisz);
 		
 		 textField_id.setText(String.valueOf(instance.czytajListe().get(0).getID()));
 	     textField_cena.setText(String.valueOf(instance.czytajListe().get(0).getCena()));
 	     textField_nazwa.setText(instance.czytajListe().get(0).getNazwa());
+	     
+	     JLabel Kategoria = new JLabel("Kategoria");
+	     Kategoria.setFont(new Font("Tahoma", Font.BOLD, 14));
+	     Kategoria.setBounds(47, 124, 89, 14);
+	     contentPane.add(Kategoria);
+	     
+	     textField_Kategoria = new JTextField();
+	     textField_Kategoria.setEditable(false);
+	     textField_Kategoria.setColumns(10);
+	     textField_Kategoria.setBounds(126, 123, 186, 20);
+	     contentPane.add(textField_Kategoria);
+	     
 		
 		int selectedIndex = comboBox.getSelectedIndex();
 		
@@ -133,6 +146,7 @@ public class Przegladaj extends JFrame {
 		        textField_id.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getID()));
 		        textField_cena.setText(String.valueOf(instance.czytajListe().get(selectedIndex).getCena()));
 		        textField_nazwa.setText(instance.czytajListe().get(selectedIndex).getNazwa());
+		        textField_Kategoria.setText(instance.czytajListe().get(selectedIndex).getKategoria());
 		        
 		       
 				

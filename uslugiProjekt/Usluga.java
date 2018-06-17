@@ -5,12 +5,14 @@ public class Usluga {
 	private int id_uslugi;
 	private String nazwa_uslugi;
 	private double cena_uslugi;
+	private String kategoria;
 	
 	public Usluga() {}
-	public Usluga(String nazwa, double cena) {
+	public Usluga(String nazwa, double cena, String kategoria) {
 		id_uslugi = id;
 		nazwa_uslugi = nazwa;
 		cena_uslugi = cena;
+		this.kategoria = kategoria;
 		id++;
 	}
 	
@@ -26,11 +28,16 @@ public class Usluga {
 		return cena_uslugi;
 	}
 	
+	public String getKategoria() {
+		return kategoria;
+	}
+	
 	public void edytuj(String nazwa, double cena) {
 		this.nazwa_uslugi = nazwa;
 		this.cena_uslugi = cena;
 	}
 	
+
 	
 	
 }

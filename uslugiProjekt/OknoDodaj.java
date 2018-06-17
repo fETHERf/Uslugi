@@ -8,11 +8,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 public class OknoDodaj extends JFrame {
 
@@ -80,11 +83,34 @@ public class OknoDodaj extends JFrame {
 		contentPane.add(textField_cena);
 		
 		JButton btnDodaj = new JButton("Dodaj");
-		btnDodaj.setBounds(176, 128, 177, 23);
+		btnDodaj.setBounds(176, 214, 177, 23);
 		contentPane.add(btnDodaj);
 		
 		ListaUslug instance = ListaUslug.getInstance();
 		textField_id.setText(String.valueOf(instance.getInstance().size()));
+		String kategorie[] = {"Rozrywka", "Edukacja", "Finanse i Ubezpieczenia", "Zdrowie i Uroda", "Inne"};
+		
+		JComboBox<String> comboBox = new JComboBox<String>(kategorie);
+		comboBox.setBounds(176, 128, 177, 20);
+		contentPane.add(comboBox);
+		int selectedIndex = comboBox.getSelectedIndex();
+		
+		
+		/*comboBox.addActionListener(new ActionListener() {
+			 
+		    @Override
+		    public void actionPerformed(ActionEvent event) {
+		        JComboBox<String> combo = (JComboBox<String>) event.getSource();
+		        int selectedIndex = combo.getSelectedIndex();
+		    }
+		    
+		    
+		});*/
+		
+		JLabel lblKategoria = new JLabel("Kategoria:");
+		lblKategoria.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblKategoria.setBounds(51, 123, 115, 27);
+		contentPane.add(lblKategoria);
 		
 		btnDodaj.addMouseListener(new MouseAdapter() {
 			@Override
@@ -93,7 +119,8 @@ public class OknoDodaj extends JFrame {
 				//int id = Integer.parseInt(textField_id.getText());
 				double cena = Double.parseDouble(textField_cena.getText());
 				String nazwa = textField_nazwa.getText();
-				Usluga usluga = new Usluga(nazwa, cena);
+				String kategoria = kategorie[comboBox.getSelectedIndex()];
+				Usluga usluga = new Usluga(nazwa, cena, kategoria);
 				instance.dodajDoListy(usluga);
 				textField_id.setText(String.valueOf(instance.getInstance().size()));
 				//System.out.println(usluga.getID() + "nazwa: " + usluga.getNazwa() + " " + usluga.getCena());
