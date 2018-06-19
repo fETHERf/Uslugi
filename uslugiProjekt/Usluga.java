@@ -12,8 +12,9 @@ public class Usluga {
 		id_uslugi = id;
 		nazwa_uslugi = nazwa;
 		cena_uslugi = cena;
-		this.kategoria = kategoria;
 		id++;
+		this.kategoria = kategoria;
+		
 	}
 	
 	public int getID() {
