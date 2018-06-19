@@ -1,15 +1,19 @@
 package uslugiProjekt;
 
 public class Usluga {
+	static int id = 0;
 	private int id_uslugi;
 	private String nazwa_uslugi;
 	private double cena_uslugi;
+	private String kategoria;
 	
 	public Usluga() {}
-	public Usluga(int id, String nazwa, double cena) {
+	public Usluga(String nazwa, double cena, String kategoria) {
 		id_uslugi = id;
 		nazwa_uslugi = nazwa;
 		cena_uslugi = cena;
+		this.kategoria = kategoria;
+		id++;
 	}
 	
 	public int getID() {
@@ -24,12 +28,16 @@ public class Usluga {
 		return cena_uslugi;
 	}
 	
-	public void edytuj(int id, String nazwa, double cena) {
-		this.id_uslugi = id;
+	public String getKategoria() {
+		return kategoria;
+	}
+	
+	public void edytuj(String nazwa, double cena) {
 		this.nazwa_uslugi = nazwa;
 		this.cena_uslugi = cena;
 	}
 	
+
 	
 	
 }

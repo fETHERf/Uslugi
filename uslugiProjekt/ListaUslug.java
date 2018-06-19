@@ -7,6 +7,7 @@ import java.util.List;
 public class ListaUslug {
 	private List<Usluga> listaUslug = new ArrayList<>();
     private static ListaUslug instance;
+    static int size = 0;
     
     
     private ListaUslug() {
@@ -22,10 +23,25 @@ public class ListaUslug {
     
     public void dodajDoListy(Usluga usluga) {
     	instance.listaUslug.add(usluga);
+    	size++;
+    }
+    
+    public int size() {
+    	return size;
     }
     
     public List<Usluga> czytajListe() {
     	return instance.listaUslug;
+    }
+    
+    public double policzSume(String kategoria) {
+    	double suma = 0;
+    	for (int i = 0; i < instance.listaUslug.size(); i++) {
+    		if(instance.listaUslug.get(i).getKategoria() == kategoria) {
+    			suma += instance.listaUslug.get(i).getCena();
+    		}
+    	}
+    	return suma;
     }
     
     public void usunZListy(int id) {
@@ -35,5 +51,7 @@ public class ListaUslug {
     		}
     	}
     }
+    
+    
     
 }
