@@ -21,9 +21,7 @@ public class Dodano extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtDodanoNowUsug;
 
-	/**
-	 * Launch the application.
-	 */
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -37,9 +35,6 @@ public class Dodano extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public Dodano() {
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 250, 150);
