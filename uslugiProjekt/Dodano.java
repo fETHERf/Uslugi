@@ -1,3 +1,5 @@
+/**Dodawanie**/
+
 package uslugiProjekt;
 
 import java.awt.BorderLayout;
@@ -21,7 +23,7 @@ public class Dodano extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtDodanoNowUsug;
 
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -42,14 +44,14 @@ public class Dodano extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		txtDodanoNowUsug = new JTextField();
 		txtDodanoNowUsug.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtDodanoNowUsug.setText("Dodano now\u0105 us\u0142ug\u0119 do bazy");
 		txtDodanoNowUsug.setBounds(0, 0, 233, 41);
 		contentPane.add(txtDodanoNowUsug);
 		txtDodanoNowUsug.setColumns(10);
-		
+
 		JButton btnOk = new JButton("OK");
 		btnOk.addMouseListener(new MouseAdapter() {
 			@Override

@@ -1,3 +1,4 @@
+/** GUI JAVA **/
 package uslugiProjekt;
 
 import java.awt.EventQueue;
@@ -39,7 +40,7 @@ public class GUI {
 	}
 
 	/**
-	 * Create the application.
+	 * Create the application..
 	 */
 	public GUI() {
 		initialize();
@@ -54,8 +55,8 @@ public class GUI {
 		frmZarzdzanieUsugami.setBounds(100, 100, 583, 300);
 		frmZarzdzanieUsugami.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmZarzdzanieUsugami.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		
+
+
 		JButton btnNewButton = new JButton("Dodaj Usluge");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -66,8 +67,8 @@ public class GUI {
 		});
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		frmZarzdzanieUsugami.getContentPane().add(btnNewButton);
-		
-		
+
+
 		JButton btnPrzegldajUsugi = new JButton("Przegl\u0105daj Us\u0142ugi");
 		btnPrzegldajUsugi.addMouseListener(new MouseAdapter() {
 			@Override
@@ -77,28 +78,28 @@ public class GUI {
 			}
 		});
 		frmZarzdzanieUsugami.getContentPane().add(btnPrzegldajUsugi);
-		
+
 		JButton btnStatystyki = new JButton("Statystyki");
 		frmZarzdzanieUsugami.getContentPane().add(btnStatystyki);
-		
+
 		JButton btnNewButton_1 = new JButton("Modyfikuj Usluge");
 		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_1);
-		
+
 		JButton btnNewButton_2 = new JButton("Za\u0142aduj Uslugi");
 		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_2);
-		
+
 		btnStatystyki.addActionListener(new ActionListener() {
-        	
+
 		    @Override
 		    public void actionPerformed(ActionEvent event) {
 		    	chart demo = new chart( "Mobile Sales" );
-		        demo.setSize( 560 , 367 );    
-		        RefineryUtilities.centerFrameOnScreen( demo );    
-		        demo.setVisible( true ); 
-		        
+		        demo.setSize( 560 , 367 );
+		        RefineryUtilities.centerFrameOnScreen( demo );
+		        demo.setVisible( true );
+
 		    }
 		});
 	}
-	
+
 
 }

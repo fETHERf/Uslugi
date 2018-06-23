@@ -1,3 +1,5 @@
+/**Dodawanie - okno **/
+
 package uslugiProjekt;
 
 import java.awt.BorderLayout;
@@ -50,72 +52,72 @@ public class OknoDodaj extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblIdUsugi = new JLabel("ID Us\u0142ugi:");
 		lblIdUsugi.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblIdUsugi.setBounds(51, 25, 125, 27);
 		contentPane.add(lblIdUsugi);
-		
+
 		JLabel lblNazwaUsugi = new JLabel("Nazwa Us\u0142ugi:");
 		lblNazwaUsugi.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblNazwaUsugi.setBounds(51, 58, 125, 27);
 		contentPane.add(lblNazwaUsugi);
-		
+
 		JLabel lblCenaUsugi = new JLabel("Cena Us\u0142ugi:");
 		lblCenaUsugi.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblCenaUsugi.setBounds(51, 90, 125, 27);
 		contentPane.add(lblCenaUsugi);
-		
+
 		textField_id = new JTextField();
 		textField_id.setBounds(176, 30, 177, 22);
 		textField_id.setEditable(false);
 		contentPane.add(textField_id);
 		textField_id.setColumns(10);
-		
+
 		textField_nazwa = new JTextField();
 		textField_nazwa.setColumns(10);
 		textField_nazwa.setBounds(176, 63, 177, 22);
 		contentPane.add(textField_nazwa);
-		
+
 		textField_cena = new JTextField();
 		textField_cena.setColumns(10);
 		textField_cena.setBounds(176, 95, 177, 22);
 		contentPane.add(textField_cena);
-		
+
 		JButton btnDodaj = new JButton("Dodaj");
 		btnDodaj.setBounds(176, 214, 177, 23);
 		contentPane.add(btnDodaj);
-		
+
 		ListaUslug instance = ListaUslug.getInstance();
 		textField_id.setText(String.valueOf(instance.getInstance().size()));
 		String kategorie[] = {"Rozrywka", "Edukacja", "Finanse i Ubezpieczenia", "Zdrowie i Uroda", "Inne"};
-		
+
 		JComboBox<String> comboBox = new JComboBox<String>(kategorie);
 		comboBox.setBounds(176, 128, 177, 20);
 		contentPane.add(comboBox);
 		int selectedIndex = comboBox.getSelectedIndex();
-		
-		
+
+
 		/*comboBox.addActionListener(new ActionListener() {
-			 
+
 		    @Override
 		    public void actionPerformed(ActionEvent event) {
 		        JComboBox<String> combo = (JComboBox<String>) event.getSource();
 		        int selectedIndex = combo.getSelectedIndex();
 		    }
-		    
-		    
+
+
 		});*/
-		
+
 		JLabel lblKategoria = new JLabel("Kategoria:");
 		lblKategoria.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblKategoria.setBounds(51, 123, 115, 27);
 		contentPane.add(lblKategoria);
-		
+
 		btnDodaj.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
-				
+
 				//int id = Integer.parseInt(textField_id.getText());
 				double cena = Double.parseDouble(textField_cena.getText());
 				String nazwa = textField_nazwa.getText();
@@ -127,14 +129,14 @@ public class OknoDodaj extends JFrame {
 				textField_nazwa.setText("");
 				textField_cena.setText("");
 				textField_id.setText(String.valueOf(instance.getInstance().size()));
-				
+
 				Dodano frame1 = new Dodano();
 				frame1.setVisible(true);
-				
+
 			}
-			
+
 		});
-		
-		
+
+
 	}
 }
