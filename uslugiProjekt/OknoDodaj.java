@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-/**Dodawanie - okno **/
-
->>>>>>> Kamila
 package uslugiProjekt;
 
 import java.awt.BorderLayout;
@@ -55,62 +50,37 @@ public class OknoDodaj extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> Kamila
 		JLabel lblIdUsugi = new JLabel("ID Us\u0142ugi:");
 		lblIdUsugi.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblIdUsugi.setBounds(51, 25, 125, 27);
 		contentPane.add(lblIdUsugi);
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> Kamila
 		JLabel lblNazwaUsugi = new JLabel("Nazwa Us\u0142ugi:");
 		lblNazwaUsugi.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblNazwaUsugi.setBounds(51, 58, 125, 27);
 		contentPane.add(lblNazwaUsugi);
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> Kamila
 		JLabel lblCenaUsugi = new JLabel("Cena Us\u0142ugi:");
 		lblCenaUsugi.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblCenaUsugi.setBounds(51, 90, 125, 27);
 		contentPane.add(lblCenaUsugi);
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> Kamila
 		textField_id = new JTextField();
 		textField_id.setBounds(176, 30, 177, 22);
 		textField_id.setEditable(false);
 		contentPane.add(textField_id);
 		textField_id.setColumns(10);
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> Kamila
 		textField_nazwa = new JTextField();
 		textField_nazwa.setColumns(10);
 		textField_nazwa.setBounds(176, 63, 177, 22);
 		contentPane.add(textField_nazwa);
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> Kamila
 		textField_cena = new JTextField();
 		textField_cena.setColumns(10);
 		textField_cena.setBounds(176, 95, 177, 22);
 		contentPane.add(textField_cena);
-<<<<<<< HEAD
 		
 		JButton btnDodaj = new JButton("Dodaj");
 		btnDodaj.setBounds(176, 214, 177, 23);
@@ -120,77 +90,64 @@ public class OknoDodaj extends JFrame {
 		textField_id.setText(String.valueOf(instance.getInstance().size()));
 		String kategorie[] = {"Rozrywka", "Edukacja", "Finanse i Ubezpieczenia", "Zdrowie i Uroda", "Inne"};
 		
-=======
-
-		JButton btnDodaj = new JButton("Dodaj");
-		btnDodaj.setBounds(176, 214, 177, 23);
-		contentPane.add(btnDodaj);
-
-		ListaUslug instance = ListaUslug.getInstance();
-		textField_id.setText(String.valueOf(instance.getInstance().size()));
-		String kategorie[] = {"Rozrywka", "Edukacja", "Finanse i Ubezpieczenia", "Zdrowie i Uroda", "Inne"};
-
->>>>>>> Kamila
 		JComboBox<String> comboBox = new JComboBox<String>(kategorie);
 		comboBox.setBounds(176, 128, 177, 20);
 		contentPane.add(comboBox);
 		int selectedIndex = comboBox.getSelectedIndex();
-<<<<<<< HEAD
 		
 		
 		/*comboBox.addActionListener(new ActionListener() {
 			 
-=======
-
-
-		/*comboBox.addActionListener(new ActionListener() {
-
->>>>>>> Kamila
 		    @Override
 		    public void actionPerformed(ActionEvent event) {
 		        JComboBox<String> combo = (JComboBox<String>) event.getSource();
 		        int selectedIndex = combo.getSelectedIndex();
 		    }
-<<<<<<< HEAD
 		    
 		    
 		});*/
 		
-=======
-
-
-		});*/
-
->>>>>>> Kamila
 		JLabel lblKategoria = new JLabel("Kategoria:");
 		lblKategoria.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblKategoria.setBounds(51, 123, 115, 27);
 		contentPane.add(lblKategoria);
-<<<<<<< HEAD
 		
 		btnDodaj.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				
-=======
-
-		btnDodaj.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent arg0) {
-
->>>>>>> Kamila
 				//int id = Integer.parseInt(textField_id.getText());
+				try
+				{
+					Double.parseDouble(textField_cena.getText());
+				}
+				catch(NumberFormatException e)
+				{
+		            System.out.println("Wprowadzono nieprawid³ow¹ wartoœæ w polu 'Cena'");
+		            return;
+				}
 				double cena = Double.parseDouble(textField_cena.getText());
+				
+				UslugaFactory uslugaFactory = new UslugaFactory();
 				String nazwa = textField_nazwa.getText();
+				if(nazwa.equals("")) {
+					System.out.println("xDD");
+					
+					UslugaInterface usluga = uslugaFactory.getType(true, null, 0, null);
+					instance.dodajDoListy(usluga);
+				}
+				else {
 				String kategoria = kategorie[comboBox.getSelectedIndex()];
-				Usluga usluga = new Usluga(nazwa, cena, kategoria);
+				
+				UslugaInterface usluga = uslugaFactory.getType(false, nazwa, cena, kategoria);
+				
 				instance.dodajDoListy(usluga);
 				textField_id.setText(String.valueOf(instance.getInstance().size()));
 				//System.out.println(usluga.getID() + "nazwa: " + usluga.getNazwa() + " " + usluga.getCena());
 				textField_nazwa.setText("");
 				textField_cena.setText("");
 				textField_id.setText(String.valueOf(instance.getInstance().size()));
-<<<<<<< HEAD
+				}
 				
 				Dodano frame1 = new Dodano();
 				frame1.setVisible(true);
@@ -200,16 +157,5 @@ public class OknoDodaj extends JFrame {
 		});
 		
 		
-=======
-
-				Dodano frame1 = new Dodano();
-				frame1.setVisible(true);
-
-			}
-
-		});
-
-
->>>>>>> Kamila
 	}
 }

@@ -1,5 +1,3 @@
-/**Lista Us³ug**/
-
 package uslugiProjekt;
 
 import java.util.ArrayList;
@@ -7,48 +5,35 @@ import java.util.List;
 
 //singleton
 public class ListaUslug {
-	private List<Usluga> listaUslug = new ArrayList<>();
+	private List<UslugaInterface> listaUslug = new ArrayList<>();
     private static ListaUslug instance;
     static int size = 0;
-<<<<<<< HEAD
     
     
-=======
-
-
->>>>>>> Kamila
     private ListaUslug() {
     }
-
+    
     public static ListaUslug getInstance() {
         if (instance == null) {
             instance = new ListaUslug();
         }
-
+        
         return instance;
     }
-
-    public void dodajDoListy(Usluga usluga) {
+    
+    public void dodajDoListy(UslugaInterface usluga) {
     	instance.listaUslug.add(usluga);
     	size++;
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> Kamila
     public int size() {
     	return size;
     }
-
-    public List<Usluga> czytajListe() {
+    
+    public List<UslugaInterface> czytajListe() {
     	return instance.listaUslug;
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> Kamila
     public double policzSume(String kategoria) {
     	double suma = 0;
     	for (int i = 0; i < instance.listaUslug.size(); i++) {
@@ -58,11 +43,7 @@ public class ListaUslug {
     	}
     	return suma;
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> Kamila
     public void usunZListy(int id) {
     	for (int i = 0; i < instance.listaUslug.size(); i++) {
     		if (id == instance.listaUslug.get(i).getID()) {
@@ -70,14 +51,7 @@ public class ListaUslug {
     		}
     	}
     }
-<<<<<<< HEAD
     
     
     
 }
-=======
-
-
-
-}
->>>>>>> Kamila

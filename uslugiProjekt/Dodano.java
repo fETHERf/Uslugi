@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-/**Dodawanie**/
-
->>>>>>> Kamila
 package uslugiProjekt;
 
 import java.awt.BorderLayout;
@@ -26,11 +21,9 @@ public class Dodano extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtDodanoNowUsug;
 
-<<<<<<< HEAD
-	
-=======
-
->>>>>>> Kamila
+	/**
+	 * Launch the application.
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -44,6 +37,9 @@ public class Dodano extends JFrame {
 		});
 	}
 
+	/**
+	 * Create the frame.
+	 */
 	public Dodano() {
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 250, 150);
@@ -51,22 +47,14 @@ public class Dodano extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> Kamila
 		txtDodanoNowUsug = new JTextField();
 		txtDodanoNowUsug.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		txtDodanoNowUsug.setText("Dodano now\u0105 us\u0142ug\u0119 do bazy");
 		txtDodanoNowUsug.setBounds(0, 0, 233, 41);
 		contentPane.add(txtDodanoNowUsug);
 		txtDodanoNowUsug.setColumns(10);
-<<<<<<< HEAD
 		
-=======
-
->>>>>>> Kamila
 		JButton btnOk = new JButton("OK");
 		btnOk.addMouseListener(new MouseAdapter() {
 			@Override

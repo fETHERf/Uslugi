@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-/** GUI JAVA **/
->>>>>>> Kamila
 package uslugiProjekt;
 
 import java.awt.EventQueue;
@@ -43,11 +39,7 @@ public class GUI {
 	}
 
 	/**
-<<<<<<< HEAD
 	 * Create the application.
-=======
-	 * Create the application..
->>>>>>> Kamila
 	 */
 	public GUI() {
 		initialize();
@@ -62,13 +54,8 @@ public class GUI {
 		frmZarzdzanieUsugami.setBounds(100, 100, 583, 300);
 		frmZarzdzanieUsugami.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmZarzdzanieUsugami.getContentPane().setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-<<<<<<< HEAD
 		
 		
-=======
-
-
->>>>>>> Kamila
 		JButton btnNewButton = new JButton("Dodaj Usluge");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -79,13 +66,8 @@ public class GUI {
 		});
 		btnNewButton.setHorizontalAlignment(SwingConstants.LEFT);
 		frmZarzdzanieUsugami.getContentPane().add(btnNewButton);
-<<<<<<< HEAD
 		
 		
-=======
-
-
->>>>>>> Kamila
 		JButton btnPrzegldajUsugi = new JButton("Przegl\u0105daj Us\u0142ugi");
 		btnPrzegldajUsugi.addMouseListener(new MouseAdapter() {
 			@Override
@@ -95,7 +77,6 @@ public class GUI {
 			}
 		});
 		frmZarzdzanieUsugami.getContentPane().add(btnPrzegldajUsugi);
-<<<<<<< HEAD
 		
 		JButton btnStatystyki = new JButton("Statystyki");
 		frmZarzdzanieUsugami.getContentPane().add(btnStatystyki);
@@ -110,7 +91,7 @@ public class GUI {
         	
 		    @Override
 		    public void actionPerformed(ActionEvent event) {
-		    	chart demo = new chart( "Mobile Sales" );
+		    	chart demo = new chart( "Wykres wydanych pieniêdzy na us³ugi poszczególnych kategorii" );
 		        demo.setSize( 560 , 367 );    
 		        RefineryUtilities.centerFrameOnScreen( demo );    
 		        demo.setVisible( true ); 
@@ -119,30 +100,5 @@ public class GUI {
 		});
 	}
 	
-=======
-
-		JButton btnStatystyki = new JButton("Statystyki");
-		frmZarzdzanieUsugami.getContentPane().add(btnStatystyki);
-
-		JButton btnNewButton_1 = new JButton("Modyfikuj Usluge");
-		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_1);
-
-		JButton btnNewButton_2 = new JButton("Za\u0142aduj Uslugi");
-		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_2);
-
-		btnStatystyki.addActionListener(new ActionListener() {
-
-		    @Override
-		    public void actionPerformed(ActionEvent event) {
-		    	chart demo = new chart( "Mobile Sales" );
-		        demo.setSize( 560 , 367 );
-		        RefineryUtilities.centerFrameOnScreen( demo );
-		        demo.setVisible( true );
-
-		    }
-		});
-	}
-
->>>>>>> Kamila
 
 }
