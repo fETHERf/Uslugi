@@ -1,4 +1,4 @@
-package uslugiProjekt;
+package projektUslugi;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -86,26 +86,21 @@ public class OknoDodaj extends JFrame {
 		btnDodaj.setBounds(176, 214, 177, 23);
 		contentPane.add(btnDodaj);
 		
-		ListaUslug instance = ListaUslug.getInstance();
-		textField_id.setText(String.valueOf(instance.getInstance().size()));
-		String kategorie[] = {"Rozrywka", "Edukacja", "Finanse i Ubezpieczenia", "Zdrowie i Uroda", "Inne"};
+		final ListaUslug instance = ListaUslug.getInstance();
+		if(instance.czytajListe().size() > 0) {
+			textField_id.setText(String.valueOf(instance.czytajListe().size()));
+		}
+		else {
+			textField_id.setText(String.valueOf(0));
+		}
 		
-		JComboBox<String> comboBox = new JComboBox<String>(kategorie);
+		final String kategorie[] = {"Rozrywka", "Edukacja", "Finanse i Ubezpieczenia", "Zdrowie i Uroda", "Inne"};
+		
+		final JComboBox<String> comboBox = new JComboBox<String>(kategorie);
 		comboBox.setBounds(176, 128, 177, 20);
 		contentPane.add(comboBox);
 		int selectedIndex = comboBox.getSelectedIndex();
 		
-		
-		/*comboBox.addActionListener(new ActionListener() {
-			 
-		    @Override
-		    public void actionPerformed(ActionEvent event) {
-		        JComboBox<String> combo = (JComboBox<String>) event.getSource();
-		        int selectedIndex = combo.getSelectedIndex();
-		    }
-		    
-		    
-		});*/
 		
 		JLabel lblKategoria = new JLabel("Kategoria:");
 		lblKategoria.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -142,7 +137,7 @@ public class OknoDodaj extends JFrame {
 				UslugaInterface usluga = uslugaFactory.getType(false, nazwa, cena, kategoria);
 				
 				instance.dodajDoListy(usluga);
-				textField_id.setText(String.valueOf(instance.getInstance().size()));
+				textField_id.setText(String.valueOf(usluga.getID()));
 				//System.out.println(usluga.getID() + "nazwa: " + usluga.getNazwa() + " " + usluga.getCena());
 				textField_nazwa.setText("");
 				textField_cena.setText("");

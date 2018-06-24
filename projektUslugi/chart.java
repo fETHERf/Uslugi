@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 import javax.swing.JPanel;
 
 import org.jfree.chart.ChartFactory;

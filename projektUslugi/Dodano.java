@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

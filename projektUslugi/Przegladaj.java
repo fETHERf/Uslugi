@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -59,7 +60,7 @@ public class Przegladaj extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		ListaUslug instance = ListaUslug.getInstance();
+		final ListaUslug instance = ListaUslug.getInstance();
 		
 		String[] ar = new String[instance.size()];
 		
@@ -70,7 +71,7 @@ public class Przegladaj extends JFrame {
 		
 		
 		
-		JComboBox<String> comboBox = new JComboBox<String>(ar);
+		final JComboBox<String> comboBox = new JComboBox<String>(ar);
 		comboBox.setBounds(37, 11, 275, 20);
 		contentPane.add(comboBox);
 		

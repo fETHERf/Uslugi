@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 
 import java.awt.EventQueue;
 
@@ -20,23 +21,12 @@ import java.awt.event.MouseEvent;
 
 public class GUI {
 
-	private JFrame frmZarzdzanieUsugami;
+	public JFrame frmZarzdzanieUsugami;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI window = new GUI();
-					window.frmZarzdzanieUsugami.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the application.
@@ -81,15 +71,9 @@ public class GUI {
 		JButton btnStatystyki = new JButton("Statystyki");
 		frmZarzdzanieUsugami.getContentPane().add(btnStatystyki);
 		
-		JButton btnNewButton_1 = new JButton("Modyfikuj Usluge");
-		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("Za\u0142aduj Uslugi");
-		frmZarzdzanieUsugami.getContentPane().add(btnNewButton_2);
-		
 		btnStatystyki.addActionListener(new ActionListener() {
         	
-		    @Override
+		    
 		    public void actionPerformed(ActionEvent event) {
 		    	chart demo = new chart( "Wykres wydanych pieniêdzy na us³ugi poszczególnych kategorii" );
 		        demo.setSize( 560 , 367 );    

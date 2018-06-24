@@ -1,4 +1,4 @@
-package uslugiProjekt;
+package projektUslugi;
 
 public abstract class AbstractUsluga implements UslugaInterface {
 	protected int id_uslugi;
