@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 
 public class UslugaFactory {
 	   public UslugaInterface getType(boolean isNil, String nazwa, double cena, String kategoria) {

@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 
 public class NullUsluga extends AbstractUsluga implements UslugaInterface {
 

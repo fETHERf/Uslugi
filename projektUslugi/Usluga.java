@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 
 public class Usluga extends AbstractUsluga implements UslugaInterface {
 	static int id = 0;

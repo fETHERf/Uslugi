@@ -1,4 +1,4 @@
-package uslugiProjekt;
+package projektUslugi;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -86,7 +86,7 @@ public class OknoDodaj extends JFrame {
 		btnDodaj.setBounds(176, 214, 177, 23);
 		contentPane.add(btnDodaj);
 		
-		ListaUslug instance = ListaUslug.getInstance();
+		final ListaUslug instance = ListaUslug.getInstance();
 		if(instance.czytajListe().size() > 0) {
 			textField_id.setText(String.valueOf(instance.czytajListe().size()));
 		}
@@ -94,9 +94,9 @@ public class OknoDodaj extends JFrame {
 			textField_id.setText(String.valueOf(0));
 		}
 		
-		String kategorie[] = {"Rozrywka", "Edukacja", "Finanse i Ubezpieczenia", "Zdrowie i Uroda", "Inne"};
+		final String kategorie[] = {"Rozrywka", "Edukacja", "Finanse i Ubezpieczenia", "Zdrowie i Uroda", "Inne"};
 		
-		JComboBox<String> comboBox = new JComboBox<String>(kategorie);
+		final JComboBox<String> comboBox = new JComboBox<String>(kategorie);
 		comboBox.setBounds(176, 128, 177, 20);
 		contentPane.add(comboBox);
 		int selectedIndex = comboBox.getSelectedIndex();

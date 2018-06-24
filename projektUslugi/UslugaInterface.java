@@ -1,4 +1,5 @@
-package uslugiProjekt;
+package projektUslugi;
+
 
 public interface UslugaInterface {
 	public boolean isNil();
