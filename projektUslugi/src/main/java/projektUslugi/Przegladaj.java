@@ -1,57 +1,29 @@
 package projektUslugi;
 
 
-import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
-import java.util.ArrayList;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
 import javax.swing.JTextField;
-import java.awt.FlowLayout;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
 import java.awt.Font;
 import javax.swing.JButton;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JComboBox;
-import javax.swing.JSpinner;
 import javax.swing.JLabel;
 
 public class Przegladaj extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtDodanoNowUsug;
 	private JTextField textField_id;
 	private JTextField textField_nazwa;
 	private JTextField textField_cena;
 	private JTextField textField_Kategoria;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Przegladaj frame = new Przegladaj();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public Przegladaj() {
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 393, 233);
@@ -116,9 +88,7 @@ public class Przegladaj extends JFrame {
 		btnZapisz.setBounds(223, 161, 89, 23);
 		contentPane.add(btnZapisz);
 		
-		 textField_id.setText(String.valueOf(instance.czytajListe().get(0).getID()));
-	     textField_cena.setText(String.valueOf(instance.czytajListe().get(0).getCena()));
-	     textField_nazwa.setText(instance.czytajListe().get(0).getNazwa());
+		 
 	     
 	     JLabel Kategoria = new JLabel("Kategoria");
 	     Kategoria.setFont(new Font("Tahoma", Font.BOLD, 14));
@@ -131,9 +101,13 @@ public class Przegladaj extends JFrame {
 	     textField_Kategoria.setBounds(126, 123, 186, 20);
 	     contentPane.add(textField_Kategoria);
 	     
+	     textField_id.setText(String.valueOf(instance.czytajListe().get(0).getID()));
+	     textField_cena.setText(String.valueOf(instance.czytajListe().get(0).getCena()));
+	     textField_nazwa.setText(instance.czytajListe().get(0).getNazwa());
+	     textField_Kategoria.setText(instance.czytajListe().get(0).getKategoria());
+	     
 		
-		int selectedIndex = comboBox.getSelectedIndex();
-		
+			
 		comboBox.addActionListener(new ActionListener() {
 			 
 		    @Override
