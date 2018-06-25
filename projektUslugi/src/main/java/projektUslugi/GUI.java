@@ -1,21 +1,12 @@
 package projektUslugi;
 
-
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JButton;
-import java.awt.BorderLayout;
 import javax.swing.SwingConstants;
-import javax.swing.event.AncestorListener;
-
 import org.jfree.ui.RefineryUtilities;
-
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JLabel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -23,14 +14,6 @@ public class GUI {
 
 	public JFrame frmZarzdzanieUsugami;
 
-	/**
-	 * Launch the application.
-	 */
-	
-
-	/**
-	 * Create the application.
-	 */
 	public GUI() {
 		initialize();
 	}
